@@ -83,7 +83,7 @@ resource "null_resource" "validate_project_id_tag" {
   depends_on = [ null_resource.validate_project_id ]
   provisioner "local-exec" {
     # Call the PowerShell script and pass the resource group name, project_id, environment, and location as parameters
-    command = "powershell -File ./scripts/rg_tags_validation.ps1 -resource_group_name ${azurerm_resource_group.rg.name} -project_id ${var.project_id} -environment ${var.environment} -location ${var.location}"
+    command = "powershell -File ./scripts/rg_tags_validation.ps1 -resource_group_name ${var.resource_group_name} -project_id ${var.project_id} -environment ${var.environment} -location ${var.location}"
 
     # Pass variables as environment variables to the script
     environment = {

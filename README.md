@@ -1,6 +1,6 @@
 # Azure Modules Metadata Validation
 
-This Terraform module generates a standardized name for resources based on the provided `environment`, `project_id`, `location`, and a `provided_name`. It outputs the name `constructed_name`(whose name length does not exceed 24 characters) in the format `"env_code"+"project_id"+"location_code"+"provided_name"` using preset codes for the environment and location. It validates the allowed `project_id` list for resource deployment. The module also outputs a standardized set of tags for tracking resource metadata.
+This Terraform module generates a standardized name for resources based on the provided `environment`, `project_id`, `location`, and a `provided_name`. It outputs the `constructed_name`(whose length does not exceed 24 characters) in the format `"env_code"+"project_id"+"location_code"+"provided_name"` using preset codes for the environment and location. It validates the allowed `project_id` list for resource deployment. The module also outputs a standardized set of tags for tracking resource metadata.
 
 ## Requirements
 

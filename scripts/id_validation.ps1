@@ -3,7 +3,7 @@ param (
 )
 
 # List of banned project IDs
-$bannedProjectIDs = @("1234", "0000", "9999") # Example banned IDs
+$bannedProjectIDs = Get-Content -Path "./scripts/banned_ids.txt"
 
 # Check if the project_id is exactly 4 digits
 if ($project_id.Length -eq 4 -and $project_id -match '^\d{4}$') {

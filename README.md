@@ -1,12 +1,12 @@
 # Azure Modules Metadata Validation
 
-This Terraform module generates a standardized name for resources based on the provided `environment`, `project_id`, `location`, `resource_group_name`, and a `provided_name`. It outputs the `constructed_name`(whose length does not exceed 24 characters) in the format `"env_code"+"project_id"+"location_code"+"provided_name"` using preset codes for the environment and location. It validates the allowed `project_id` list for resource deployment. The module also outputs a standardized set of `tags` for tracking resource metadata and ensures that the resources can be deployed on an appropiate resource group validating it with its tags.
+This Terraform module generates a standardized name for resources based on the provided `environment`, `project_id`, `location`, and a `provided_name`. It outputs the `constructed_name`(whose length does not exceed 24 characters) in the format `"env_code"+"project_id"+"location_code"+"provided_name"` using preset codes for the environment and location. It validates the allowed `project_id` list for resource deployment. The module also outputs a standardized set of `tags` for tracking resource metadata and ensures that the resources can be deployed on an appropiate resource group validating it with its tags. For this it requires the `resource_group_name`.
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.2.3 |
 
 ## Usage

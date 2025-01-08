@@ -9,7 +9,7 @@ This Terraform module generates a standardized name for resources based on the p
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.2.3 |
 
-## Usage
+## Usage Example
 
 ```hcl
 module "metadata_validation" {

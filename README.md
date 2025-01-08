@@ -38,3 +38,32 @@ module "metadata_validation" {
 |------|-------------|
 | <a name="output_constructed_name"></a> [constructed\_name](#output\_constructed\_name) | Output for the constructed name |
 | <a name="output_tags"></a> [tags](#output\_tags) | Output for the tags |
+
+## Scripts Explanation
+
+The module leverages external PowerShell scripts to perform additional validation for project IDs and resource group metadata. These scripts ensure compliance with organizational standards before deploying resources.
+
+### Validation Scripts
+
+### id_validation.ps1
+
+Purpose: 
+- Validates the project_id to ensure it meets the following requirements:
+- Must be exactly 4 numeric characters.
+- Must not be in the list of banned project IDs (defined in banned_ids.txt).
+
+Behavior:
+- Outputs an error and exits with a failure status if the project_id is invalid or banned.
+- Outputs a success message if the project_id is valid.
+
+### rg_tags_validation.ps1
+
+Purpose: 
+- Validates the tags in the specified resource group to ensure they match the provided metadata:
+- The project_id tag must match the provided project_id.
+- The environment tag must match the provided environment.
+- The location tag must match the provided location.
+
+Behavior:
+- Outputs an error and exits with a failure status if any tag is missing or mismatched.
+- Outputs a success message if all tags are valid.

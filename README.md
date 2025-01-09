@@ -13,15 +13,23 @@ This Terraform module generates a standardized name for resources based on the p
 
 ```hcl
 module "metadata_validation" {
-  source = "./modules/metadata_validation"
-
+  source              = "./modules/metadata_validation"
   resource_name       = "myResource"
   environment         = "production"
   project_id          = "2345"
   location            = "centralus"
   resource_group_name = "myResourceGroup"
 }
+
+module "my_module" {
+  source              = "./modules/my_module"
+  resource_name       = module.metadata_validation.constructed_name
+  resource_group_name = "myResourceGroup"
+}
+
+# New constructed resource name on Azure: p2345uscmyResource
 ```
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
